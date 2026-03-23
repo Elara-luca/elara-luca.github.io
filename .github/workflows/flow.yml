@@ -1,8 +1,24 @@
+name: Manual Deploy  # 可选，工作流名称
+
 on:
   workflow_dispatch:
-    # 可选：定义输入参数
     inputs:
       environment:
         description: '部署环境'
         required: true
         default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to ${{ github.event.inputs.environment }}
+        run: |
+          echo "Deploying to ${{ github.event.inputs.environment }}"
