@@ -1,24 +1,36 @@
-name: Manual Deploy  # 可选，工作流名称
+name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: '部署环境'
-        required: true
-        default: 'staging'
-        type: choice
-        options:
-          - staging
-          - production
+  push:
+    branches:
+      - main  # 推送到 main 时自动触发
+  workflow_dispatch:  # 也支持手动触发
 
-jobs: 
-  deploy:
+jobs:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Deploy to ${{ github.event.inputs.environment }}
-        run: |
-          echo "Deploying to ${{ github.event.inputs.environment }}"
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Build with Jekyll  # 如果是 Jekyll 站点
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site  # 重要：上传构建后的目录，而不是整个仓库
+      
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
