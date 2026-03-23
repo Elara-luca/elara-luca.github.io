@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="Elara"/><meta name="copyright" content="Elara"/><meta name="theme-color" content="#FFB347"/><meta name="format-detection" content="telephone=no"/><meta name="keywords" content="项目"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-touch-fullscreen" content="yes"/><meta name="application-name" content="养老可视化平台技术复盘 | Elara的小窝"/><meta name="apple-mobile-web-app-title" content="养老可视化平台技术复盘 | Elara的小窝"/><meta name="apple-mobile-web-app-status-bar-style" content="#FFB347"/><link rel="canonical" href="http://example.com/2026/02/13/养老可视化平台技术复盘/"/><meta name="description" content="一、项目背景 随着中国老龄化进程加速，养老院选择成为许多家庭的痛点。信息碎片化、筛选效率低、决策困难是用户面临的主要问题。  基于这个痛点，我设计并实现了一个养老院智能筛选与可视化平台，帮助用户通过多维度问卷获得个性化推荐，并通过可视化图表对比不同区域的养老院数据。  项目目标：  提升用户筛选效率（从翻阅多个平台到一站式决策） 提供可解释的个性化推荐（告诉用户为什么推荐这家） 探索LLM在...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="养老可视化平台技术复盘 | Elara的小窝">
+<meta property="og:url" content="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/index.html">
+<meta property="og:site_name" content="Elara的小窝">
+<meta property="og:description" content="一、项目背景 随着中国老龄化进程加速，养老院选择成为许多家庭的痛点。信息碎片化、筛选效率低、决策困难是用户面临的主要问题。  基于这个痛点，我设计并实现了一个养老院智能筛选与可视化平台，帮助用户通过多维度问卷获得个性化推荐，并通过可视化图表对比不同区域的养老院数据。  项目目标：  提升用户筛选效率（从翻阅多个平台到一站式决策） 提供可解释的个性化推荐（告诉用户为什么推荐这家） 探索LLM在...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/assets/images/Hexo-Theme-MEOW.png">
+<meta property="article:published_time" content="2026-02-13T13:58:01.000Z">
+<meta property="article:modified_time" content="2026-03-23T07:09:19.584Z">
+<meta property="article:author" content="Elara">
+<meta property="article:tag" content="项目">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/assets/images/Hexo-Theme-MEOW.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>养老可视化平台技术复盘 | Elara的小窝</title><link rel="shortcut icon" href="/assets/images/Hexo-Theme-MEOW.ico"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="assets"/>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="prefetch" href="/"/><link rel="prefetch" href="/archives"/><link rel="prefetch" href="/tags"/><meta name="generator" content="Hexo 8.0.0"></head><body bg-style="none"><header><div id="navbar"><div id="nav-info"><a id="site-icon" href="/" title="主页"><img src="/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a id="site-name" href="/" title="主页"><div>Elara的小窝</div><img src="/assets/images/svg/uc/uc-home.svg" class="icon noview" alt="Icon"></a></div><div id="nav-menu"></div><div id="nav-function"><div id="search-btn"><a href="javascript:void(0);" title="搜索" accesskey="s"><img src="/assets/images/svg/uc/uc-search.svg" class="icon noview" alt="Icon"><span>搜索</span></a></div><div id="menu-btn"><a href="javascript:void(0);" title="打开菜单"><img src="/assets/images/svg/uc/uc-menu.svg" class="icon noview" alt="Icon"></a></div></div></div></header><div id="menu-aside"><div id="menu-aside-container"><div id="menu-aside-info"><a href="/" title="主页"><img src="/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a href="/" title="主页">Elara的小窝</a></div><hr/></div></div><main><div class="banner"><div class="banner-info"><div class="banner-avatar"><img src="/assets/images/Hexo-Theme-MEOW.png" alt="Avatar"/></div><div class="banner-title">「 MEOW 」</div></div></div><div class="post-container"><div class="post-main"><div class="post-content"><h1 class="post-title">养老可视化平台技术复盘</h1><div class="post-author"><span>作者: Elara</span></div><div class="post-meta"><div class="post-info"><div class="post-date"><div class="post-pubdate"><img src="/assets/images/svg/ta/ta-pubdate.svg" class="icon noview" alt="Icon"><span>发表于2026-02-13</span></div><div class="post-update"><img src="/assets/images/svg/ta/ta-update.svg" class="icon noview" alt="Icon"><span>更新于2026-03-23</span></div></div><div class="post-read"></div></div><div class="post-attribute"><div class="post-tags"><img src="/assets/images/svg/ta/ta-tag.svg" class="icon noview" alt="Icon"><span><a class="post-tags-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></span></div></div></div><div class="post markdown" indent="false"><h1 id="一、项目背景"><a href="#一、项目背景" class="headerlink" title="一、项目背景"></a>一、项目背景</h1><p> 随着中国老龄化进程加速，养老院选择成为许多家庭的痛点。信息碎片化、筛选效率低、决策困难是用户面临的主要问题。</p>
+<p> 基于这个痛点，我设计并实现了一个<strong>养老院智能筛选与可视化平台</strong>，帮助用户通过多维度问卷获得个性化推荐，并通过可视化图表对比不同区域的养老院数据。</p>
+<p> <strong>项目目标</strong>：</p>
+<ul>
+<li>提升用户筛选效率（从翻阅多个平台到一站式决策）</li>
+<li>提供可解释的个性化推荐（告诉用户为什么推荐这家）</li>
+<li>探索LLM在垂直领域的落地方式（防止幻觉、保证准确性）</li>
+</ul>
+<hr>
+<h1 id="二、技术架构"><a href="#二、技术架构" class="headerlink" title="二、技术架构"></a>二、技术架构</h1><p><strong>技术栈</strong>：</p>
+<ul>
+<li>后端：Spring Boot + MyBatis + MySQL + Redis</li>
+<li>前端：Vue + ECharts</li>
+<li>AI：LLM API（意图解析 + 文案生成）</li>
+</ul>
+<hr>
+<h1 id="三、核心设计一：数据建模与性能优化"><a href="#三、核心设计一：数据建模与性能优化" class="headerlink" title="三、核心设计一：数据建模与性能优化"></a>三、核心设计一：数据建模与性能优化</h1><h2 id="3-1-分表设计"><a href="#3-1-分表设计" class="headerlink" title="3.1 分表设计"></a>3.1 分表设计</h2><p>在设计数据库时，我分析了数据的特点：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">表类型</th>
+<th align="left">数据内容</th>
+<th align="left">读写特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">基础信息表</td>
+<td align="left">名称、地址、联系方式</td>
+<td align="left">读多写少，基本不修改</td>
+</tr>
+<tr>
+<td align="left">动态信息表</td>
+<td align="left">床位空余、入住率</td>
+<td align="left">频繁更新（每小时）</td>
+</tr>
+<tr>
+<td align="left">统计信息表</td>
+<td align="left">平均评分、评论数</td>
+<td align="left">定期更新（每天）</td>
+</tr>
+</tbody></table></div>
+<p>基于这个分析，我把三类数据拆分成三类表。收益有三点：</p>
+<ol>
+<li><strong>减少锁竞争</strong>：频繁更新的动态信息表独立，不会阻塞对基础信息的查询</li>
+<li><strong>提高缓存命中率</strong>：静态信息可以放心做Redis缓存，不用担心频繁失效</li>
+<li><strong>便于扩展</strong>：未来如果动态信息写入压力大，可以单独对这个表做分库分表</li>
+</ol>
+<h2 id="3-2-逻辑外键-vs-物理外键"><a href="#3-2-逻辑外键-vs-物理外键" class="headerlink" title="3.2 逻辑外键 vs 物理外键"></a>3.2 逻辑外键 vs 物理外键</h2><p>我没有使用数据库的物理外键（<code>FOREIGN KEY</code>），而是采用<strong>逻辑外键</strong>，通过应用层代码维护表间引用关系。</p>
+<ul>
+<li><strong>性能</strong>：物理外键在<code>INSERT</code>、<code>UPDATE</code>时会检查关联表，产生锁竞争。特别是动态信息表写入频繁，如果用物理外键，每次更新都要锁基础信息表</li>
+<li><strong>扩展性</strong>：未来如果对动态信息表做分表，物理外键无法跨分片维护</li>
+<li><strong>软删除兼容</strong>：我用了逻辑删除（<code>deleted</code>字段），物理外键会干扰软删除逻辑</li>
+</ul>
+<p><strong>代价是</strong>：数据一致性需要自己在代码里保证。我的做法是：</p>
+<ul>
+<li>用<code>@Transactional</code>事务保证多表更新的原子性</li>
+<li>关键业务逻辑加分布式锁</li>
+</ul>
+<h2 id="3-3-索引优化"><a href="#3-3-索引优化" class="headerlink" title="3.3 索引优化"></a>3.3 索引优化</h2><p>针对高频查询场景，字段建立了联合索引。查询从全表扫描优化为索引扫描。<br>eg：联合索引：<code>INDEX idx_area_price (area, price_level)</code></p>
+<hr>
+<h1 id="四、核心设计二：个性化推荐引擎"><a href="#四、核心设计二：个性化推荐引擎" class="headerlink" title="四、核心设计二：个性化推荐引擎"></a>四、核心设计二：个性化推荐引擎</h1><p>推荐系统的核心挑战是<strong>准确性</strong>和<strong>可解释性</strong>的平衡。我没有选择复杂的机器学习模型，而是用加权评分模型。</p>
+<h2 id="4-1-两阶段策略"><a href="#4-1-两阶段策略" class="headerlink" title="4.1 两阶段策略"></a>4.1 两阶段策略</h2><ol>
+<li><strong>硬筛选</strong>：先用SQL做精确过滤（地区、价格区间），剔除不符合基本条件的养老院</li>
+<li><strong>软排序</strong>：在筛选后的结果集上做加权排序</li>
+</ol>
+<h2 id="4-2-画像构建："><a href="#4-2-画像构建：" class="headerlink" title="4.2 画像构建："></a>4.2 画像构建：</h2><p>用户标签从问卷答案提取标签<br>用户填写问卷后，系统会从答案中提取出用户标签。<br>养老院画像：从服务+设施提取标签</p>
+<p>养老院的标签来源有两个：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">来源</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>服务项目</strong></td>
+<td align="left">养老院提供的护理服务类型</td>
+<td align="left"><code>medical</code>（医疗服务）、<code>rehab</code>（康复训练）</td>
+</tr>
+<tr>
+<td align="left"><strong>设施配置</strong></td>
+<td align="left">JSON格式存储的设施列表</td>
+<td align="left"><code>barrier_free</code>（无障碍）、<code>gym</code>（健身房）</td>
+</tr>
+</tbody></table></div>
+<p>匹配分数计算公式：<br>最终分数 &#x3D; 标签匹配分 × 0.8 + 基础分 × 0.2</p>
+<h2 id="4-3-兜底机制"><a href="#4-3-兜底机制" class="headerlink" title="4.3 兜底机制"></a>4.3 兜底机制</h2><p>如果筛选后结果少于3家，系统会自动放宽筛选条件（价位范围扩大20%），确保用户不会看到空结果。</p>
+<hr>
+<h1 id="五、核心设计三：LLM智能推荐"><a href="#五、核心设计三：LLM智能推荐" class="headerlink" title="五、核心设计三：LLM智能推荐"></a>五、核心设计三：LLM智能推荐</h1><p>LLM最大的问题是幻觉，它可能编造不存在的养老院或捏造评价。我的设计原则是：<strong>LLM只做自然语言理解和文本生成，不做事实判断</strong>。</p>
+<h2 id="5-1-架构设计"><a href="#5-1-架构设计" class="headerlink" title="5.1 架构设计"></a>5.1 架构设计</h2><ol>
+<li><strong>用户输入</strong>：“我想找杭州西湖区，护理条件好，最好有中医服务的养老院”</li>
+<li><strong>意图解析（NLU）</strong>：通过Prompt Engineering让LLM输出结构化JSON<div class="code-container" code-lang="Json"><div class="codebox"><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;city&quot;</span><span class="punctuation">:</span> <span class="string">&quot;杭州&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;district&quot;</span><span class="punctuation">:</span> <span class="string">&quot;西湖区&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;features&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;护理&quot;</span><span class="punctuation">,</span> <span class="string">&quot;中医服务&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div></li>
+<li><strong>数据库检索</strong>：用提取的条件生成SQL，查询真实数据</li>
+<li><strong>文案生成（NLG）</strong>：将查到的养老院数据发给LLM，生成个性化推荐语</li>
+</ol>
+<h2 id="5-2-容错与降级"><a href="#5-2-容错与降级" class="headerlink" title="5.2 容错与降级"></a>5.2 容错与降级</h2><ul>
+<li>解析准确率约85%，失败时降级为手动筛选页面</li>
+<li>关键字段（如地区）如果LLM提取不准，用模糊匹配在数据库里再查一遍</li>
+<li>每次推荐调用2次LLM API（解析+生成），单次成本约0.02元</li>
+<li>相同问题用Redis缓存，缓存命中率约40%</li>
+</ul>
+<hr>
+<h1 id="六、核心设计四：工程化细节"><a href="#六、核心设计四：工程化细节" class="headerlink" title="六、核心设计四：工程化细节"></a>六、核心设计四：工程化细节</h1><h2 id="6-1-统一返回结构"><a href="#6-1-统一返回结构" class="headerlink" title="6.1 统一返回结构"></a>6.1 统一返回结构</h2><p>封装了<code>Result</code>类，规范前后端交互：</p>
+<div class="code-container" code-lang="Json"><div class="codebox"><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;success&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<h2 id="6-2-防重复提交"><a href="#6-2-防重复提交" class="headerlink" title="6.2 防重复提交"></a>6.2 防重复提交</h2><p>用Redis分布式锁，以<code>userId + 业务ID</code>作为key，设置5秒过期时间，防止用户重复提交。</p>
+<h2 id="6-3-软删除"><a href="#6-3-软删除" class="headerlink" title="6.3 软删除"></a>6.3 软删除</h2><p>采用逻辑删除（<code>deleted</code>字段），配合MyBatis-Plus的<code>@TableLogic</code>，数据可恢复，不影响统计。</p>
+<h2 id="6-4-事务一致性"><a href="#6-4-事务一致性" class="headerlink" title="6.4 事务一致性"></a>6.4 事务一致性</h2><p>多表更新用<code>@Transactional(rollbackFor = Exception.class)</code>保证原子性。</p>
+<hr>
+<h1 id="八、总结"><a href="#八、总结" class="headerlink" title="八、总结"></a>八、总结</h1><p><strong>项目收获</strong>：</p>
+<ul>
+<li>积累了数据库设计（分表、逻辑外键、索引优化）的实战经验</li>
+<li>探索了LLM在垂直领域的落地方式，形成了“NLU+检索+NLG”的可复用模式</li>
+</ul>
+<p><strong>未来改进方向</strong>：</p>
+<ul>
+<li>引入ES替代MySQL的复杂查询，提升搜索体验</li>
+<li>优化推荐权重，让模型更精准</li>
+<li>增加用户反馈机制，形成推荐闭环</li>
+</ul>
+</div><div class="post-reward"><div class="post-reward-btn" title="赞赏作者"><img src="/assets/images/svg/uc/uc-gift.svg" class="icon noview" alt="Icon"><span></span></div><div class="post-reward-content"><div class="post-reward-text"></div><div class="post-reward-list"><a href="/null" target="_blank">致谢名单</a></div></div></div><div class="post-copyright"><div class="post-copyright-info">本作品由 Elara 于 2026-02-13 21:58:01 发布</div><div class="post-copyright-link"><span>作品地址：<a href="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/">养老可视化平台技术复盘</a></span><button class="copy-text" type="button" data-text="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/">复制</button></div><div class="post-copyright-detail">除特别声明外，本站作品均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike' target='_blank'>CC BY-NC-SA 4.0</a> 许可协议，转载请注明来自 <a href='/'>Elara的小窝</a></div><img class="post-copyright-icon noview" src="/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></div><div class="post-tail-tags"><a class="post-tail-tags-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></div></div><aside id="post-sidebar" status="show"><div id="toc-container"><div class="toc-title"><img src="/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"><span>目录</span></div><div class="toc-content" id="toc-div"><ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-list-text">一、项目背景</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E4%BA%8C%E3%80%81%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-list-text">二、技术架构</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E4%B8%89%E3%80%81%E6%A0%B8%E5%BF%83%E8%AE%BE%E8%AE%A1%E4%B8%80%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-list-text">三、核心设计一：数据建模与性能优化</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#3-1-%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1"><span class="toc-list-text">3.1 分表设计</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#3-2-%E9%80%BB%E8%BE%91%E5%A4%96%E9%94%AE-vs-%E7%89%A9%E7%90%86%E5%A4%96%E9%94%AE"><span class="toc-list-text">3.2 逻辑外键 vs 物理外键</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#3-3-%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96"><span class="toc-list-text">3.3 索引优化</span></a></li></ol></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E5%9B%9B%E3%80%81%E6%A0%B8%E5%BF%83%E8%AE%BE%E8%AE%A1%E4%BA%8C%EF%BC%9A%E4%B8%AA%E6%80%A7%E5%8C%96%E6%8E%A8%E8%8D%90%E5%BC%95%E6%93%8E"><span class="toc-list-text">四、核心设计二：个性化推荐引擎</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#4-1-%E4%B8%A4%E9%98%B6%E6%AE%B5%E7%AD%96%E7%95%A5"><span class="toc-list-text">4.1 两阶段策略</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#4-2-%E7%94%BB%E5%83%8F%E6%9E%84%E5%BB%BA%EF%BC%9A"><span class="toc-list-text">4.2 画像构建：</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#4-3-%E5%85%9C%E5%BA%95%E6%9C%BA%E5%88%B6"><span class="toc-list-text">4.3 兜底机制</span></a></li></ol></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E4%BA%94%E3%80%81%E6%A0%B8%E5%BF%83%E8%AE%BE%E8%AE%A1%E4%B8%89%EF%BC%9ALLM%E6%99%BA%E8%83%BD%E6%8E%A8%E8%8D%90"><span class="toc-list-text">五、核心设计三：LLM智能推荐</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#5-1-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-list-text">5.1 架构设计</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#5-2-%E5%AE%B9%E9%94%99%E4%B8%8E%E9%99%8D%E7%BA%A7"><span class="toc-list-text">5.2 容错与降级</span></a></li></ol></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E5%85%AD%E3%80%81%E6%A0%B8%E5%BF%83%E8%AE%BE%E8%AE%A1%E5%9B%9B%EF%BC%9A%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%86%E8%8A%82"><span class="toc-list-text">六、核心设计四：工程化细节</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#6-1-%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%84"><span class="toc-list-text">6.1 统一返回结构</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#6-2-%E9%98%B2%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4"><span class="toc-list-text">6.2 防重复提交</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#6-3-%E8%BD%AF%E5%88%A0%E9%99%A4"><span class="toc-list-text">6.3 软删除</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#6-4-%E4%BA%8B%E5%8A%A1%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-list-text">6.4 事务一致性</span></a></li></ol></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E5%85%AB%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-list-text">八、总结</span></a></li></ol></div></div></aside></div></div><div id="toolbar" hide=""><div id="toolbar-setting-container" hide=""><div class="toolbar-item"><button id="tool-color-mode" title="深色模式" type="button"><img src="/assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button class="copy-text" id="tool-share" title="分享" type="button" data-text="http://example.com/2026/02/13/%E5%85%BB%E8%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E5%A4%8D%E7%9B%98/"><img src="/assets/images/svg/ta/ta-share.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-plus" title="放大字体" type="button"><img src="/assets/images/svg/ta/ta-text-plus.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-minus" title="缩小字体" type="button"><img src="/assets/images/svg/ta/ta-text-minus.svg" class="icon noview" alt="Icon"></button></div></div><div class="toolbar-container"><div class="toolbar-item"><button id="tool-setting" title="设置" type="button"><img src="/assets/images/svg/ta/ta-setting.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-toc" title="目录" type="button"><img src="/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-gototop" title="返回顶部" type="button"><img src="/assets/images/svg/ta/ta-up.svg" class="icon noview" alt="Icon"></button></div></div></div><div class="search-overlay"><div class="search-container"><div class="search-header"><div class="search-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+搜索</div><div class="search-close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" /><path d="M9 8l6 8" /><path d="M15 8l-6 8" /></svg></div></div><div class="search-input-box"><input id="search-input" type="search" placeholder="请输入关键词进行站内搜索……" value="" maxlength="80"/></div><div class="search-result-container"><div class="search-result-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg></div></div></div></div></main><footer><div class="footer"><div id="footer-copyright">© 2025 - 2026 <span>💗</span> <a href="/null">Elara</a></div><div id="footer-info"><div id="footer-framework">🚀本站由 <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title="3.1.0" target="_blank">Meow</a> 强力驱动</div><div id="footer-runtime"><span id="runtime" data-startdate="2025-10-15T20:00:00.000Z">🌻已稳定运行.年.月.天</span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
+  root: '/',
+  toolbar: true,
+  lazyload_src: '/assets/images/Meow-Loading.webp',
+  friends: false,
+  codeblock: true,
+  share_text: '🐱Share From Meow',
+  onblur_title: '滚回来继续学！～✧(´▽`ʃ♡ƪ)',
+  mouse_click: false,
+  notify:{
+    enable: false,
+    info: '复制成功～转载请标注本文地址',
+    f12_info: '开发者模式已打开，请遵循本站版权协议'
+  },
+  search: {
+    enable: true,
+    path: 'search.json',
+    local: {
+      top_n_per_article: 1,
+      preload: false
+    }
+  },
+  encrypt: false,
+};
+</script><script>if (!localStorage.getItem('color-mode')) {
+  localStorage.setItem('color-mode', 'light' || 'light');
+}
+document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
+</script>
+<script src="/js/theme/tools/utils.js"></script>
+
+<script src="/js/plugins/dist/lazyload.min.js"></script>
+
+<script src="/js/plugins/view-image.min.js"></script>
+<script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/plugins/dist/search.js"></script>
+
+<script src="/js/main.js" type="module"></script>
+</div></body></html>
